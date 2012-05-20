@@ -2,7 +2,7 @@
 
 <html>
   <head>
-    <title>Don Kuntz on GitHub</title>
+    <title>Dennis Ideler &hearts; Open Source</title>
     <link rel="stylesheet" type="text/css" href="assets/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/grid.css">
     <link rel="stylesheet" type="text/css" href="assets/style.css">
@@ -14,9 +14,7 @@
       // Put custom repo URL's in this object, keyed by repo name.
       var repoUrls = {
         //"bootstrap": "http://twitter.github.com/bootstrap/",
-        "Grape": "http://quate.net/grape",
-        "sqlbuddy": "http://sqlbuddy.com",
-        "grapefruit": "http://grapefruit.dkuntz2.com/"
+        // TODO: projects not on github
       };
 
       function repoUrl(repo) {
@@ -25,7 +23,8 @@
 
       // Put custom repo descriptions in this object, keyed by repo name.
       var repoDescriptions = {
-        //"bootstrap": "An HTML, CSS, and JS toolkit designed to kickstart development of webapps and sites",
+      //"bootstrap": "An HTML, CSS, and JS toolkit designed to kickstart development of webapps and sites",
+      // TODO: projects not on github
       };
 
       function repoDescription(repo) {
@@ -63,7 +62,7 @@
         $item.appendTo("#repos");
       }
 
-      $.getJSON("https://api.github.com/users/dkuntz2/repos?callback=?", function (result) {
+      $.getJSON("https://api.github.com/users/dideler/repos?callback=?", function (result) {
         var repos = result.data;
 
         $(function () {
@@ -119,22 +118,24 @@
   <body>
     <div id="wrapper" class="grid clearfix">
       <div id="main" class="grid-1">
-        <a href="http://github.com/dkuntz2"><img src="http://www.gravatar.com/avatar/78c6a7cc84d75548cdaf3191b173bbd9?s=190" /></a>
+        <a href="http://github.com/dideler"><img src="https://en.gravatar.com/userimage/18603695/0acc17fc1010407b9fbf819774cfcc03.jpg?size=190" /></a>
 
-        <h1>Don Kuntz on GitHub</h1>
+        <h1>Dennis Ideler</h1>
+        <h3>Keep Calm and Hack On</h3>
+        <p><a href="dennisideler.com">http://dennisideler.com</a></p>
       </div>
 
       <div class="grid grid-3">
         <div id="statistics" class="grid-1 alpha header">
           <h1>Statistics</h1>
           <p>
-            <a href="https://github.com/dkuntz2/repositories"><span id="num-repos">&nbsp;</span> public repos</a>
+            <a href="https://github.com/dideler/repositories"><span id="num-repos">&nbsp;</span> public repos</a>
           </p>
-          <p class="email"><a href="mailto:don@dkuntz2.com">don@dkuntz2.com</a></p>
+          <p class="email"><a href="mailto:ideler.dennis@gmail.com">ideler.dennis@gmail.com</a></p>
         </div>
 
         <div id="recently-updated" class="grid-2 omega header">
-          <h1>Recently updated <a href="https://github.com/dkuntz2/repositories">View All on GitHub</a></h1>
+          <h1>Recently updated <a href="https://github.com/dideler/repositories">View All on GitHub</a></h1>
           <ol id="recently-updated-repos"></ol>
         </div>
       </div>
