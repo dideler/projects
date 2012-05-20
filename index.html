@@ -62,6 +62,7 @@
         $item.appendTo("#repos");
       }
 
+      // TODO: Extract info from https://api.github.com/users/dideler
       $.getJSON("https://api.github.com/users/dideler/repos?callback=?", function (result) {
         var repos = result.data;
 
@@ -123,6 +124,10 @@
         <h1>Dennis Ideler</h1>
         <h3>Keep Calm and Hack On</h3>
         <p><a href="dennisideler.com">http://dennisideler.com</a></p>
+        <p>
+          <a href="https://twitter.com/dideler" class="twitter-follow-button">Follow @dideler</a>
+          <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+        </p>
       </div>
 
       <div class="grid grid-3">
