@@ -68,11 +68,17 @@ a:hover {
 }
 
 #main h1 {
-  margin: 10px 15px 0;
+  margin: 35px 15px 0;
+  font-size: 20pt;
 }
+
+#main h3 {
+  font-size: 12pt;
+}
+
 #main p {
-  margin: 0 10px 15px 15px;
-  font-size: 11px;
+  margin: 0 20px 0px 20px;
+  font-size: 11pt;
   line-height: 2;
 }
 
