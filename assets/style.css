@@ -3,21 +3,22 @@ html {
 }
 
 body {
-  font: 13px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border-top: 10px solid #663666;
+  font: 13px "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.4;
   color: #666;
   min-width: 960px;
 }
 
 h1 {
-  font-weight: bold;
+  font-weight: normal;
   font-size: 20px;
   color: #333;
 }
 
 h2 {
-  font-weight: bold;
-  font-size: 20px;
+  font-weight: normal;
+  font-size: 18px;
   color: #0084b4;
 }
 
