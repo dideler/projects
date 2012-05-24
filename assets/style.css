@@ -226,3 +226,19 @@ li.repo h3 {
 .repo.php:after {
   border-right-color: #aa00d4;
 }
+
+.repo.c\+\+:after {
+  border-right-color: lime;
+}
+
+.repo.prolog:after {
+  border-right-color: #001EFD;
+}
+
+.repo.assembly:after {
+  border-right-color: #FCFC00;
+}
+
+.repo.viml:after {
+  border-right-color: #0A00FF;
+}
