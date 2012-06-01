@@ -14,8 +14,20 @@
 
       // Put custom repo URL's in this object, keyed by repo name.
       var repoUrls = {
-        //"bootstrap": "http://twitter.github.com/bootstrap/",
-        // TODO: projects not on github
+        /* TODO: add these projects to github
+        "brockcsc.github.com": "http://brockcsc.github.com/",
+        "course-advisor": "https://github.com/BrockCSC/course-advisor",
+        "project-euler": "https://github.com/BrockCSC/project-euler",
+        "csc-templates": "https://github.com/BrockCSC/csc-templates",
+        "acm-icpc": "https://github.com/BrockCSC/acm-icpc",
+        "sandcastle-scripts": "https://github.com/BrockCSC/sandcastle-scripts",
+        "Maestro Media Center": "http://code.google.com/p/brockbots/",
+        "divs-chess": "http://code.google.com/p/divs/",
+        "basic-browser-chess": "http://code.google.com/p/basic-browser-chess/",
+        "ads.ca": "http://sites.google.com/site/cosc3p94/",
+        */
+        "ann-vs-knn": "http://dideler.github.com/ann-vs-knn/",
+        "brocku-reddit-for-chrome": "https://chrome.google.com/webstore/detail/nolkcagjanpkfmpjnljlkmdlificaapk",
       };
 
       function repoUrl(repo) {
@@ -24,8 +36,18 @@
 
       // Put custom repo descriptions in this object, keyed by repo name.
       var repoDescriptions = {
-      //"bootstrap": "An HTML, CSS, and JS toolkit designed to kickstart development of webapps and sites",
-      // TODO: projects not on github
+        /* TODO: add these projects to github
+        "brockcsc.github.com": "Free and Open Source Software by Brock University's Computer Science Club",
+        "course-advisor": "An expert system for advising Computer Science students (at Brock) which courses to enroll in.",
+        "project-euler": "A collaborative effort to solve as many Project Euler problems as we can.",
+        "csc-templates": "CSC templates for events, posters, brochures, letters, etc.",
+        "acm-icpc": "ACM International Collegiate Programming Contest",
+        "sandcastle-scripts": "Collection of useful scripts (in bash, python, etc.) for students",
+        "Maestro Media Center": "A beautiful cross-platform media centre",
+        "divs-chess": "3D chess game with a weak AI",
+        "basic-browser-chess": "Interactive chess GUI that is meant to be a substitute for chess sets.",
+        "ads.ca": "A fictional website for local classifieds",
+        */
       };
 
       function repoDescription(repo) {
@@ -63,9 +85,32 @@
         $item.appendTo("#repos");
       }
 
-      // TODO: Extract info from https://api.github.com/users/dideler
-      $.getJSON("https://api.github.com/users/dideler/repos?callback=?", function (result) {
-        var repos = result.data;
+      $.getJSON("https://api.github.com/users/dideler?callback=?", function (response) {
+        var user = response.data;
+        $(function () {
+          $("#num-gists").text(user.public_gists);
+          $("#num-followers").text(user.followers); // TODO: remove?
+          $("#name").text(user.name);
+          $("#bio").text(user.bio);
+
+          var profile = user.html_url; // TODO
+
+          var avatar = "http://www.gravatar.com/avatar/" + user.gravatar_id + "?size=200"
+          // Can also use www.gravatar.com/avatar.php?gravatar_id=
+          $("#gravatar").before('<img src="' + avatar + '">').remove();
+
+          var site = user.blog;
+          var url = site;
+          if (site.substr(0,7) != 'http://') { url = 'http://' + url; }
+          $("#site").before('<a href="' + url + '">' + site + '</a>').remove();
+
+          var email = user.email;
+          $("#email").before('<a href="mailto:' + email + '">' + email + '</a>').remove();
+        });
+      });
+
+      $.getJSON("https://api.github.com/users/dideler/repos?callback=?", function (response) {
+        var repos = response.data;
 
         $(function () {
           $("#num-repos").text(repos.length);
@@ -120,14 +165,18 @@
   <body>
     <div id="wrapper" class="grid clearfix">
       <div id="main" class="grid-1">
-        <a href="http://github.com/dideler"><img src="https://en.gravatar.com/userimage/18603695/0acc17fc1010407b9fbf819774cfcc03.jpg?size=190" /></a>
+        <a href="http://github.com/dideler"><img src="" id="gravatar"></a>
 
-        <h1>Dennis Ideler</h1>
-        <h3>Keep Calm and Hack On</h3>
-        <p><a href="http://dennisideler.com">dennisideler.com</a></p>
+        <h1 id="name"></h1>
+        <h3 id="bio"></h3>
+        <p><a href="" id="site"></a></p>
         <p>
           <a href="https://twitter.com/dideler" class="twitter-follow-button">Follow @dideler</a>
           <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+        </p>
+        <p>
+          <iframe src="http://markdotto.github.com/github-buttons/github-btn.html?user=dideler&type=follow&count=true"
+          allowtransparency="true" frameborder="0" scrolling="0" height="20px"></iframe>
         </p>
       </div>
 
@@ -136,8 +185,10 @@
           <h1>Statistics</h1>
           <p>
             <a href="https://github.com/dideler/repositories"><span id="num-repos">&nbsp;</span> public repos</a>
+            <br>
+            <a href="https://gist.github.com/dideler"><span id="num-gists">&nbsp;</span> public gists</a>
           </p>
-          <p class="email"><a href="mailto:ideler.dennis@gmail.com">ideler.dennis@gmail.com</a></p>
+          <p class="email"><a href="" id="email"></a></p>
         </div>
 
         <div id="recently-updated" class="grid-2 omega header">
