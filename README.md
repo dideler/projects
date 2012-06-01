@@ -7,7 +7,7 @@ which is based off of [twitter.github.com](http://twitter.github.com/).
 
 ## FORKING
 
-You may fork this project for your own work. It's very easy to personalize.
+You may fork this project for your own work. It's **very easy to personalize**.
 
 ### Dynamic version
 
@@ -18,22 +18,21 @@ Simply search for my GitHub username `dideler` and replace all instances with yo
 
 A [static version](https://github.com/dideler/dideler.github.com/tree/static)
 exists. You'll need to modify it more to personalize it, but it does have its
-benfits -- such as a faster page load speed.
+benefits -- such as a faster page load speed.
 
 ### Organizations
 
 If you're using it for an organization profile, you also need to search and replace
 `users` with `org`.
 
-## GitHub API v3
+## GitHub API
 
-* GitHub's API is used to grab public information from your profile
-  * [JSON-P Callbacks](http://developer.github.com/v3/#json-p-callbacks) are used
-    to embed your GitHub content in the web page.
+GitHub's API v3 is used to grab public information from your profile, which is used to fill in your portfolio page.
 
-To view your public data from the API, use your browser to visit
-`https://api.github.com/users/username`
-or you can use command-line `curl https://api.github.com/users/username?callback`
+[JSON-P Callbacks](http://developer.github.com/v3/#json-p-callbacks) are used to embed your GitHub content in the web page.
+
+To view your public data from the API, use your browser to visit [https://api.github.com/users/your-username](https://api.github.com/users/dideler)
+or you can use command-line `curl https://api.github.com/users/your-username?callback`
 
 ## LICENSE
 
