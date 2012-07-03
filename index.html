@@ -12,6 +12,11 @@
     <script type="text/javascript">
     (function ($, undefined) {
 
+      function rotateBio() { // TODO
+        var mantras = ["Keep Calm and Hack On", "Think it. Build it. Ship it."];
+        $("#bio").text(randomItem(mantras));
+      }
+
       // Put custom repo URL's in this object, keyed by repo name.
       var repoUrls = {
         /* TODO: add these projects to github
@@ -91,11 +96,11 @@
         var user = response.data;
         $(function () {
           $("#num-gists").text(user.public_gists);
-          $("#num-followers").text(user.followers); // TODO: remove?
+          // $("#num-followers").text(user.followers);
           $("#name").text(user.name);
           $("#bio").text(user.bio);
 
-          var profile = user.html_url; // TODO
+          var profile = user.html_url; // TODO: auto-place in page
 
           var avatar = "http://www.gravatar.com/avatar/" + user.gravatar_id + "?size=200"
           // Can also use www.gravatar.com/avatar.php?gravatar_id=
