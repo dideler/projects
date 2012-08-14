@@ -12,11 +12,11 @@
     <script type="text/javascript">
     (function ($, undefined) {
 
-      function rotateBio() { // TODO
+      $(function randomBio() {
         var mantras = ["Keep Calm and Hack On", "Think it. Build it. Ship it."];
         $("#bio").text(randomItem(mantras));
-      }
-
+      });
+      
       // Put custom repo URL's in this object, keyed by repo name.
       var repoUrls = {
         /* TODO: add these projects to github
@@ -91,13 +91,14 @@
         $item.appendTo("#repos");
       }
 
+      // Get user data.
       $.getJSON("https://api.github.com/users/dideler?callback=?", function (response) {
         var user = response.data;
         $(function () {
           $("#num-gists").text(user.public_gists);
           // $("#num-followers").text(user.followers);
           $("#name").text(user.name);
-          $("#bio").text(user.bio);
+          // $("#bio").text(user.bio);
 
           var profile = user.html_url; // TODO: auto-place in page
 
@@ -115,6 +116,7 @@
         });
       });
 
+      // Get repo data.
       $.getJSON("https://api.github.com/users/dideler/repos?callback=?", function (response) {
         var repos = response.data;
 
