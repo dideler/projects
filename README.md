@@ -1,6 +1,6 @@
-# [dideler.github.com](http://dideler.github.com)
+# [dennisideler.com/projects](http://dideler.github.com/projects)
 
-A portfolio of my public work on GitHub.
+A dynamic portfolio of my public work on GitHub.
 
 Based off of [dkuntz2.github.com](http://dkuntz2.github.com/)
 which is based off of [twitter.github.com](http://twitter.github.com/).
@@ -11,12 +11,17 @@ You may fork this project for your own work. It's **very easy to personalize**.
 
 ### Dynamic version
 
-This is the default version (master branch).
+This is the version you'll see if you go to
+[dennisideler.com/projects](http://dideler.github.com/projects).
+You can find the source on the
+[gh-pages branch](https://github.com/dideler/projects/tree/gh-pages).
+
+
 Simply search for my GitHub username `dideler` and replace all instances with your own.
 
 ### Static version
 
-A [static version](https://github.com/dideler/dideler.github.com/tree/static)
+A [static version](https://github.com/dideler/projects/tree/static)
 exists. You'll need to modify it more to personalize it, but it does have its
 benefits -- such as a faster page load speed.
 
